@@ -16,7 +16,7 @@
     "isolatedModules": true,
     "noEmit": false,
     "moduleResolution": "node",
-    "outDir": "lib",
+    "outDir": "dist",
     "lib": [
       "es2020"
     ]
