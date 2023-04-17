@@ -2,7 +2,8 @@
   "name": "@72Lux/shoppable-tracker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "source": "src/index.tsx",
   "scripts": {
     "clean": "rimraf dist",
     "compile": "tsc -p tsconfig.json",
