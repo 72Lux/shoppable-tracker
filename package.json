@@ -1,0 +1,20 @@
+{
+  "name": "@72Lux/shoppable-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "compile": "tsc -p tsconfig.json",
+    "debug": "npm run compile && node debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.3"
+  },
+  "dependencies": {
+    "ga-gtag": "^1.1.7"
+  }
+}
