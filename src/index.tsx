@@ -1,7 +1,10 @@
 // @ts-ignore
 import {gtag, install} from 'ga-gtag';
-import {IProduct} from "./types/IProduct";
+import IProduct from "./types/IProduct";
 import ITracker from "./types/ITracker";
+import TrackerConfig from "./types/TrackerConfig";
+import {FacebookTracker} from "./trackers/facebook-tracker";
+import {GoogleTracker} from "./trackers/google-tracker";
 const normalizeProduct = (product: IProduct, index: number) => {
   return {
     item_id: product.upc,
@@ -18,7 +21,7 @@ const normalizeProduct = (product: IProduct, index: number) => {
 const subTotalReducer = (total: number, product: IProduct) => {
   return total + (product.price * product.qty)
 }
-export class GoogleAnalytics4Tracker implements ITracker{
+export class GoogleAnalytics4Tracker{
   doInstall = (measurementId: string) => {
     install(measurementId);
   }
@@ -87,6 +90,55 @@ export class GoogleAnalytics4Tracker implements ITracker{
       value: products.reduce(subTotalReducer, 0),
       items: products.map(normalizeProduct)
     });
+  }
+}
+export class Tracker{
+  private trackers: ITracker[]
+  constructor(trackerConfigs : TrackerConfig[]) {
+    this.trackers = []
+    for(const trackerConfig of trackerConfigs){
+      switch (trackerConfig.type) {
+        case "Facebook":
+          this.trackers.push(new FacebookTracker(trackerConfig.tag));
+          break;
+        case "GTM":
+          break;
+        case "TikTok":
+          break;
+        case "Google":
+          this.trackers.push(new GoogleTracker(trackerConfig.tag));
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  doViewItem = (product: IProduct) => {
+
+  }
+  doAddToCart = (product: IProduct) => {
+
+  }
+  doViewCart = (products: IProduct[]) => {
+
+  }
+  doRemoveFromCart = (product: IProduct) => {
+
+  }
+  doBeginCheckout = (products: IProduct[]) => {
+
+  }
+  doAddShippingInfo = (products: IProduct[]) => {
+
+  }
+  doAddPaymentInfo = (products: IProduct[]) => {
+
+  }
+  doPurchase = (products: IProduct[], transactionId: string) => {
+
+  }
+  doRefund = (products: IProduct[], transactionId: string) => {
+
   }
 }
 

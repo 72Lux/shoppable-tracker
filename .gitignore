@@ -182,6 +182,8 @@ out
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+dist
+
 # yarn v2
 .yarn/cache
 .yarn/unplugged

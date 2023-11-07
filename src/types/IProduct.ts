@@ -1,4 +1,4 @@
-export interface IProduct {
+export default interface IProduct {
   upc: string,
   name: string,
   brand: string,

@@ -1,13 +1,13 @@
-import {IProduct} from "./IProduct";
+import IProduct from "./IProduct";
 
 export default interface ITracker {
-  doViewItem(products: IProduct[]): void
+  doViewItem(products: IProduct): void
 
-  doAddToCart(products: IProduct[]): void
+  doAddToCart(products: IProduct): void
 
   doViewCart(products: IProduct[]): void
 
-  doRemoveFromCart(products: IProduct[]): void
+  doRemoveFromCart(products: IProduct): void
 
   doBeginCheckout(products: IProduct[]): void
 
@@ -18,5 +18,4 @@ export default interface ITracker {
   doPurchase(products:IProduct[], transactionId: string): void
 
   doRefund(products:IProduct[], transactionId: string): void
-
 }
