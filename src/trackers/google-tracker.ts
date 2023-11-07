@@ -1,5 +1,6 @@
 import ITracker from "../types/ITracker";
 import IProduct from "../types/IProduct";
+// @ts-ignore
 import {gtag, install} from "ga-gtag";
 const normalizeProduct = (product: IProduct, index: number) => {
   return {
