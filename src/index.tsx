@@ -114,7 +114,9 @@ export class Tracker{
     }
   }
   doViewItem = (product: IProduct) => {
-
+    for(const tracker of this.trackers){
+      tracker.doViewItem(product)
+    }
   }
   doAddToCart = (product: IProduct) => {
 

@@ -1,6 +1,8 @@
 import IProduct from "./IProduct";
 
 export default interface ITracker {
+  doInstall(): void
+
   doViewItem(products: IProduct): void
 
   doAddToCart(products: IProduct): void
