@@ -113,6 +113,11 @@ export class Tracker{
       }
     }
   }
+  doInstall = (product: IProduct) => {
+    for(const tracker of this.trackers){
+      tracker.doInstall()
+    }
+  }
   doViewItem = (product: IProduct) => {
     for(const tracker of this.trackers){
       tracker.doViewItem(product)
