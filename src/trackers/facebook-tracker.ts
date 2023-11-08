@@ -23,8 +23,9 @@ export class FacebookTracker implements ITracker {
       return;
     }
     const fbScript = document.createElement("script");
-    fbScript.async = true
-    fbScript.src = "https://connect.facebook.net/en_US/fbevents.js"
+    fbScript.async = true;
+    fbScript.src = "https://connect.facebook.net/en_US/fbevents.js";
+    fbScript.innerHTML = "";
     document.head.insertBefore(fbScript, document.head.childNodes[0]);
     fbq('init', this.tag);
     fbq('track', 'PageView');
