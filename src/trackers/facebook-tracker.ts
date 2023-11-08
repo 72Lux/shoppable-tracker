@@ -5,8 +5,8 @@ const install = (tag:string)=>{
     return;
   }
   const noScriptFb = document.createElement('noscript');
-
-  noScriptFb.innerHTML = `<img height="1" width="1" style="display:none" id="facebook-tracker-${tag}" 
+  noScriptFb.id = "facebook-tracker-"+tag;
+  noScriptFb.innerHTML = `<img height="1" width="1" style="display:none" 
        src="https://www.facebook.com/tr?id=${tag}&ev=PageView&noscript=1"/>`;
   document.head.insertBefore(noScriptFb, document.head.childNodes[0]);
   fbq('track', 'ViewContent');
