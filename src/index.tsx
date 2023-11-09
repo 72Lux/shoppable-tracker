@@ -97,6 +97,7 @@ export class Tracker{
   constructor(trackerConfigs : TrackerConfig[]) {
     this.trackers = []
     for(const trackerConfig of trackerConfigs){
+      console.log(trackerConfig)
       switch (trackerConfig.type) {
         case "Facebook":
           this.trackers.push(new FacebookTracker(trackerConfig.tag));
