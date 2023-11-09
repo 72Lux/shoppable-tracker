@@ -125,28 +125,44 @@ export class Tracker{
     }
   }
   doAddToCart = (product: IProduct) => {
-
+    for(const tracker of this.trackers){
+      tracker.doAddToCart(product)
+    }
   }
   doViewCart = (products: IProduct[]) => {
-
+    for(const tracker of this.trackers){
+      tracker.doViewCart(products)
+    }
   }
   doRemoveFromCart = (product: IProduct) => {
-
+    for(const tracker of this.trackers){
+      tracker.doRemoveFromCart(product)
+    }
   }
   doBeginCheckout = (products: IProduct[]) => {
-
+    for(const tracker of this.trackers){
+      tracker.doBeginCheckout(products)
+    }
   }
   doAddShippingInfo = (products: IProduct[]) => {
-
+    for(const tracker of this.trackers){
+      tracker.doAddShippingInfo(products)
+    }
   }
   doAddPaymentInfo = (products: IProduct[]) => {
-
+    for(const tracker of this.trackers){
+      tracker.doAddPaymentInfo(products)
+    }
   }
   doPurchase = (products: IProduct[], transactionId: string) => {
-
+    for(const tracker of this.trackers){
+      tracker.doPurchase(products, transactionId)
+    }
   }
   doRefund = (products: IProduct[], transactionId: string) => {
-
+    for(const tracker of this.trackers){
+      tracker.doRefund(products, transactionId)
+    }
   }
 }
 
