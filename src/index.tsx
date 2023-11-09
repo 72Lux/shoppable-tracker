@@ -5,6 +5,7 @@ import ITracker from "./types/ITracker";
 import TrackerConfig from "./types/TrackerConfig";
 import {FacebookTracker} from "./trackers/facebook-tracker";
 import {GoogleTracker} from "./trackers/google-tracker";
+import {TikTokTracker} from "./trackers/tiktok-tracker";
 const normalizeProduct = (product: IProduct, index: number) => {
   return {
     item_id: product.upc,
@@ -104,6 +105,7 @@ export class Tracker{
         case "GTM":
           break;
         case "TikTok":
+          this.trackers.push(new TikTokTracker(trackerConfig.tag))
           break;
         case "Google":
           this.trackers.push(new GoogleTracker(trackerConfig.tag));

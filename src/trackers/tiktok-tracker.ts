@@ -13,7 +13,7 @@ const subTotalReducer = (total: number, product: IProduct) => {
   return total + (product.price * product.qty)
 }
 
-export class FacebookTracker implements ITracker {
+export class TikTokTracker implements ITracker {
   private tag: string
 
   constructor(tag: string) {
