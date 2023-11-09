@@ -35,6 +35,7 @@ export class GoogleTracker implements ITracker{
     });
   }
   doAddToCart = (product: IProduct) => {
+    console.log("addToCart", this.tag, product)
     this.doInstall();
     gtag("event", "add_to_cart", {
       currency: "USD",
@@ -59,6 +60,7 @@ export class GoogleTracker implements ITracker{
     });
   }
   doBeginCheckout = ( products: IProduct[]) => {
+    console.log("addToCart", this.tag, products)
     this.doInstall();
     gtag("event", "begin_checkout", {
       currency: "USD",
@@ -67,6 +69,7 @@ export class GoogleTracker implements ITracker{
     });
   }
   doAddShippingInfo = ( products: IProduct[]) => {
+    console.log("addToCart", this.tag, products)
     this.doInstall();
     gtag("event", "add_shipping_info", {
       currency: "USD",
@@ -75,6 +78,7 @@ export class GoogleTracker implements ITracker{
     });
   }
   doAddPaymentInfo = ( products: IProduct[]) => {
+    console.log("addToCart", this.tag, products)
     this.doInstall();
     gtag("event", "add_payment_info", {
       currency: "USD",
@@ -84,6 +88,7 @@ export class GoogleTracker implements ITracker{
     });
   }
   doPurchase = ( products: IProduct[], transactionId: string) => {
+    console.log("addToCart", this.tag, products)
     this.doInstall();
     gtag("event", "purchase", {
       currency: "USD",
