@@ -110,6 +110,9 @@ export class Tracker{
         case "Google":
           this.trackers.push(new GoogleTracker(trackerConfig.tag));
           break;
+        case "Shoppable":
+          this.trackers.push(new GoogleTracker(trackerConfig.tag));
+          break;
         default:
           break;
       }
