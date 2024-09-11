@@ -4,7 +4,7 @@ import IProduct from "../types/IProduct";
 const normalizeProduct = (product: IProduct) => {
   return {
     id: product.upc,
-    quantity: product.qty ?? 1
+    quantity: product.qty
   }
 }
 const subTotalReducer = (total: number, product: IProduct) => {
@@ -72,7 +72,7 @@ export class FacebookTracker implements ITracker {
       content_ids: [product.upc],
       content_name: product.name,
       currency: 'USD',
-      value: product.price * product.qty ?? 1
+      value: product.price * product.qty
     });
   }
   doViewCart = (products: IProduct[]) => {

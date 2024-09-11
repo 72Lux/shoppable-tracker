@@ -5,7 +5,7 @@ const normalizeProduct = (product: IProduct) => {
   return {
     content_id: product.upc,
     content_name: product.name,
-    quantity: product.qty ?? 1,
+    quantity: product.qty,
     price: product.price,
   }
 }
@@ -68,7 +68,7 @@ export class TikTokTracker implements ITracker {
       contents: [normalizeProduct(product)],
       content_type: 'product',
       currency: 'USD',
-      value: product.price * product.qty ?? 1
+      value: product.price * product.qty
     })
   }
   doViewCart = (products: IProduct[]) => {
