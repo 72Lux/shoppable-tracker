@@ -46,6 +46,17 @@ export class GoogleTracker implements ITracker {
       items: [normalizeProduct(product, 0)]
     });
   }
+
+  doTrackLinkOff = (products: IProduct[], destination: string) => {
+      this.doInstall();
+      gtag("event", "link_off", {
+          destination,
+          currency: "USD",
+          value: products.reduce(subTotalReducer, 0),
+          items: products.map((product, i) => normalizeProduct(product, i)),
+      });
+  };
+
   doViewCart = (products: IProduct[]) => {
     this.doInstall();
     gtag("event", "view_cart", {

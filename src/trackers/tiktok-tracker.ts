@@ -71,6 +71,12 @@ export class TikTokTracker implements ITracker {
       value: product.price * product.qty
     })
   }
+
+  doTrackLinkOff = (products: IProduct[], destination: string) => {
+    // TikTok doesn't support link-out events directly
+    console.info(`[TikTokTracker] link_off event not supported. Destination: ${destination}`);
+  };
+
   doViewCart = (products: IProduct[]) => {
     this.doInstall();
     //No such event on tiktok pixel

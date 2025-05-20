@@ -133,6 +133,13 @@ export class Tracker{
       tracker.doAddToCart(product)
     }
   }
+  doTrackLinkOff = (products: IProduct[], destination: string) => {
+    for (const tracker of this.trackers) {
+      if (typeof tracker.doTrackLinkOff === "function") {
+        tracker.doTrackLinkOff(products, destination);
+      }
+    }
+  }
   doViewCart = (products: IProduct[]) => {
     for(const tracker of this.trackers){
       tracker.doViewCart(products)

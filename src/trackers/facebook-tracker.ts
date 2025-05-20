@@ -75,6 +75,19 @@ export class FacebookTracker implements ITracker {
       value: product.price * product.qty
     });
   }
+
+  doTrackLinkOff = (products: IProduct[], destination: string) => {
+    this.doInstall();
+    fbq('trackCustom', 'LinkOffCheckout', {
+      destination,
+      content_ids: products.map(p => p.upc),
+      contents: products.map(normalizeProduct),
+      value: products.reduce(subTotalReducer, 0),
+      currency: "USD"
+    });
+  };
+
+
   doViewCart = (products: IProduct[]) => {
     this.doInstall();
     //No such event on facebook pixel
