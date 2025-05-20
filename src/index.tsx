@@ -40,6 +40,17 @@ export class GoogleAnalytics4Tracker{
       items: products.map(normalizeProduct)
     });
   }
+
+  doTrackLinkOff = (products: IProduct[], destination: string) => {
+    gtag("event", "linkoff", {
+      destination,
+      currency: "USD",
+      value: products.reduce(subTotalReducer, 0),
+      items: products.map(normalizeProduct),
+    });
+  };
+
+
   doViewCart = (products: IProduct[]) => {
     gtag("event", "view_cart", {
       currency: "USD",

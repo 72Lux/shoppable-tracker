@@ -52,7 +52,7 @@ export class GoogleTracker implements ITracker {
       gtag("event", "link_off", {
           destination,
           currency: "USD",
-          value: products.reduce(subTotalReducer, 0),
+          value: 0.00,
           items: products.map((product, i) => normalizeProduct(product, i)),
       });
   };
