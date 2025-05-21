@@ -42,6 +42,13 @@ class GoogleAnalytics4Tracker {
                 items: products.map(normalizeProduct)
             });
         };
+        this.doTrackLinkOff = (products) => {
+            (0, ga_gtag_1.gtag)("event", "linkoff", {
+                currency: "USD",
+                value: products.reduce(subTotalReducer, 0),
+                items: products.map(normalizeProduct),
+            });
+        };
         this.doViewCart = (products) => {
             (0, ga_gtag_1.gtag)("event", "view_cart", {
                 currency: "USD",
@@ -114,10 +121,10 @@ class Tracker {
                 tracker.doAddToCart(product);
             }
         };
-        this.doTrackLinkOff = (products, destination) => {
+        this.doTrackLinkOff = (products) => {
             for (const tracker of this.trackers) {
                 if (typeof tracker.doTrackLinkOff === "function") {
-                    tracker.doTrackLinkOff(products, destination);
+                    tracker.doTrackLinkOff(products);
                 }
             }
         };

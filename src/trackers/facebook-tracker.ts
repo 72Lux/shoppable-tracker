@@ -76,10 +76,9 @@ export class FacebookTracker implements ITracker {
     });
   }
 
-  doTrackLinkOff = (products: IProduct[], destination: string) => {
+  doTrackLinkOff = (products: IProduct[]) => {
     this.doInstall();
     fbq('trackCustom', 'LinkOffCheckout', {
-      destination,
       content_ids: products.map(p => p.upc),
       contents: products.map(normalizeProduct),
       value: products.reduce(subTotalReducer, 0),

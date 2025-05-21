@@ -69,9 +69,9 @@ class TikTokTracker {
                 value: product.price * product.qty
             });
         };
-        this.doTrackLinkOff = (products, destination) => {
+        this.doTrackLinkOff = (products) => {
             // TikTok doesn't support link-out events directly
-            console.info(`[TikTokTracker] link_off event not supported. Destination: ${destination}`);
+            // console.info(`[TikTokTracker] link_off event not supported. Destination: ${destination}`);
         };
         this.doViewCart = (products) => {
             this.doInstall();

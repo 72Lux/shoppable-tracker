@@ -7,7 +7,7 @@ export default interface ITracker {
 
   doAddToCart(products: IProduct): void
 
-  doTrackLinkOff(products: IProduct[], destination: string): void;
+  doTrackLinkOff(products: IProduct[]): void;
 
   doViewCart(products: IProduct[]): void
 

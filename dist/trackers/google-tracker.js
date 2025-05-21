@@ -40,10 +40,9 @@ class GoogleTracker {
                 items: [normalizeProduct(product, 0)]
             });
         };
-        this.doTrackLinkOff = (products, destination) => {
+        this.doTrackLinkOff = (products) => {
             this.doInstall();
             (0, ga_gtag_1.gtag)("event", "link_off", {
-                destination,
                 currency: "USD",
                 value: 0.00,
                 items: products.map((product, i) => normalizeProduct(product, i)),

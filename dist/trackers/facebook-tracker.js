@@ -60,10 +60,9 @@ class FacebookTracker {
                 value: product.price * product.qty
             });
         };
-        this.doTrackLinkOff = (products, destination) => {
+        this.doTrackLinkOff = (products) => {
             this.doInstall();
             fbq('trackCustom', 'LinkOffCheckout', {
-                destination,
                 content_ids: products.map(p => p.upc),
                 contents: products.map(normalizeProduct),
                 value: products.reduce(subTotalReducer, 0),

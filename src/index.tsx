@@ -41,9 +41,8 @@ export class GoogleAnalytics4Tracker{
     });
   }
 
-  doTrackLinkOff = (products: IProduct[], destination: string) => {
+  doTrackLinkOff = (products: IProduct[]) => {
     gtag("event", "linkoff", {
-      destination,
       currency: "USD",
       value: products.reduce(subTotalReducer, 0),
       items: products.map(normalizeProduct),
@@ -144,10 +143,10 @@ export class Tracker{
       tracker.doAddToCart(product)
     }
   }
-  doTrackLinkOff = (products: IProduct[], destination: string) => {
+  doTrackLinkOff = (products: IProduct[]) => {
     for (const tracker of this.trackers) {
       if (typeof tracker.doTrackLinkOff === "function") {
-        tracker.doTrackLinkOff(products, destination);
+        tracker.doTrackLinkOff(products);
       }
     }
   }

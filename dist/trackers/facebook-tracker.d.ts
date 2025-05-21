@@ -6,7 +6,7 @@ export declare class FacebookTracker implements ITracker {
     doInstall: () => void;
     doViewItem: (product: IProduct) => void;
     doAddToCart: (product: IProduct) => void;
-    doTrackLinkOff: (products: IProduct[], destination: string) => void;
+    doTrackLinkOff: (products: IProduct[]) => void;
     doViewCart: (products: IProduct[]) => void;
     doRemoveFromCart: (products: IProduct) => void;
     doBeginCheckout: (products: IProduct[]) => void;

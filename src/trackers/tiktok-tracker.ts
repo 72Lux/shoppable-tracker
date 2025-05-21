@@ -72,9 +72,9 @@ export class TikTokTracker implements ITracker {
     })
   }
 
-  doTrackLinkOff = (products: IProduct[], destination: string) => {
+  doTrackLinkOff = (products: IProduct[]) => {
     // TikTok doesn't support link-out events directly
-    console.info(`[TikTokTracker] link_off event not supported. Destination: ${destination}`);
+    // console.info(`[TikTokTracker] link_off event not supported. Destination: ${destination}`);
   };
 
   doViewCart = (products: IProduct[]) => {

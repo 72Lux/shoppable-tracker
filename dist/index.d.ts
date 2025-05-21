@@ -4,6 +4,7 @@ export declare class GoogleAnalytics4Tracker {
     doInstall: (measurementId: string) => void;
     doViewItem: (products: IProduct[]) => void;
     doAddToCart: (products: IProduct[]) => void;
+    doTrackLinkOff: (products: IProduct[]) => void;
     doViewCart: (products: IProduct[]) => void;
     doRemoveFromCart: (products: IProduct[]) => void;
     doBeginCheckout: (products: IProduct[]) => void;
@@ -18,7 +19,7 @@ export declare class Tracker {
     doInstall: (product: IProduct) => void;
     doViewItem: (product: IProduct) => void;
     doAddToCart: (product: IProduct) => void;
-    doTrackLinkOff: (products: IProduct[], destination: string) => void;
+    doTrackLinkOff: (products: IProduct[]) => void;
     doViewCart: (products: IProduct[]) => void;
     doRemoveFromCart: (product: IProduct) => void;
     doBeginCheckout: (products: IProduct[]) => void;
