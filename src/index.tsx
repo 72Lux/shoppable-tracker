@@ -87,6 +87,7 @@ export class GoogleAnalytics4Tracker{
     });
   }
   doPurchase = (products: IProduct[], transactionId: string) => {
+    console.log('doPurchase shoppable traccker: 1')
     gtag("event", "purchase", {
       currency: "USD",
       transaction_id: transactionId,
@@ -177,6 +178,7 @@ export class Tracker{
   }
   doPurchase = (products: IProduct[], transactionId: string) => {
     for(const tracker of this.trackers){
+      console.log('doPurchase shoppable traccker: 3')
       tracker.doPurchase(products, transactionId)
     }
   }

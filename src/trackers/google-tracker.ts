@@ -99,6 +99,8 @@ export class GoogleTracker implements ITracker {
   }
   doPurchase = (products: IProduct[], transactionId: string) => {
     this.doInstall();
+    console.log('doPurchase shoppable traccker: 2')
+
     gtag("event", "purchase", {
       currency: "USD",
       transaction_id: transactionId,
