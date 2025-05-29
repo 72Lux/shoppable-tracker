@@ -101,6 +101,7 @@ class FacebookTracker {
             });
         };
         this.doPurchase = (products, transactionId) => {
+            console.log('doPurchase: shoppable tracker 4');
             this.doInstall();
             fbq('track', 'Purchase', {
                 content_ids: products.map(products => products.upc),

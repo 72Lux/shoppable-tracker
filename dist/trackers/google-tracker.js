@@ -91,6 +91,7 @@ class GoogleTracker {
         };
         this.doPurchase = (products, transactionId) => {
             this.doInstall();
+            console.log('doPurchase shoppable traccker: 2');
             (0, ga_gtag_1.gtag)("event", "purchase", {
                 currency: "USD",
                 transaction_id: transactionId,
