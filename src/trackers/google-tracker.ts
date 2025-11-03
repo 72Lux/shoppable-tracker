@@ -116,4 +116,26 @@ export class GoogleTracker implements ITracker {
       items: products.map(normalizeProduct)
     });
   }
+  doCouponApplied = (couponCode: string, discountAmount: number) => {
+    this.doInstall();
+    gtag("event", "apply_coupon", {
+      coupon: couponCode,
+      value: discountAmount,
+      currency: "USD"
+    });
+    // Set user property for funnel segmentation
+    gtag("set", "user_properties", {
+      has_coupon: "true"
+    });
+  }
+  doCouponRemoved = () => {
+    this.doInstall();
+    gtag("event", "remove_coupon", {
+      currency: "USD"
+    });
+    // Reset user property
+    gtag("set", "user_properties", {
+      has_coupon: "false"
+    });
+  }
 }
