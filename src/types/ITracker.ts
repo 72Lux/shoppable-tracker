@@ -22,4 +22,8 @@ export default interface ITracker {
   doPurchase(products:IProduct[], transactionId: string): void
 
   doRefund(products:IProduct[], transactionId: string): void
+
+  doCouponApplied(couponCode: string, discountAmount: number): void
+
+  doCouponRemoved(): void
 }
