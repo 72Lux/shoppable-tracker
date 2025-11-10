@@ -175,6 +175,20 @@ export class Tracker{
       tracker.doRefund(products, transactionId)
     }
   }
+  doCouponApplied = (couponCode: string, discountAmount: number) => {
+    for(const tracker of this.trackers){
+      if (typeof tracker.doCouponApplied === "function") {
+        tracker.doCouponApplied(couponCode, discountAmount)
+      }
+    }
+  }
+  doCouponRemoved = () => {
+    for(const tracker of this.trackers){
+      if (typeof tracker.doCouponRemoved === "function") {
+        tracker.doCouponRemoved()
+      }
+    }
+  }
 }
 
 
