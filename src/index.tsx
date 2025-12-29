@@ -93,10 +93,23 @@ export class GoogleAnalytics4Tracker{
     });
   }
 }
+export type TrackerOptions = {
+  disabled?: boolean
+}
+
 export class Tracker{
   private trackers: ITracker[]
-  constructor(trackerConfigs : TrackerConfig[]) {
+  private disabled: boolean
+
+  constructor(trackerConfigs : TrackerConfig[], options?: TrackerOptions) {
     this.trackers = []
+    this.disabled = options?.disabled ?? false
+
+    // Skip tracker initialization if disabled (test mode)
+    if (this.disabled) {
+      return
+    }
+
     for(const trackerConfig of trackerConfigs){
       switch (trackerConfig.type) {
         case "Facebook":
