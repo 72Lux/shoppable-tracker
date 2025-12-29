@@ -132,4 +132,12 @@ export class FacebookTracker implements ITracker {
     this.doInstall();
     //No such event on facebook pixel
   }
+  doCouponApplied = (couponCode: string, discountAmount: number) => {
+    this.doInstall();
+    //No such event on facebook pixel
+  }
+  doCouponRemoved = () => {
+    this.doInstall();
+    //No such event on facebook pixel
+  }
 }
